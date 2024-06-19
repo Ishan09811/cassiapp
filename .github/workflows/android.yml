@@ -29,8 +29,7 @@ jobs:
       run: |
         git clone https://github.com/Ishan09811/cassiaext/
         cd cassiaext/deps
-        git clone https://github.com/termux/libandroid-shmem.git
-        git clone https://gitlab.freedesktop.org/xorg/proto/xcbproto.git
+        git clone https://github.com/termux/libandroid-shmem.git && https://gitlab.freedesktop.org/xorg/lib/libxkbfile.git && https://gitlab.freedesktop.org/xorg/proto/xcbproto.git && https://gitlab.freedesktop.org/xorg/proto/xorgproto.git
         cd ../..
         cd cassiaext
         export CI=true
