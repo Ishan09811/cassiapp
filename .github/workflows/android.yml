@@ -84,8 +84,8 @@ jobs:
       with:
         name: build-logs
         path: |
-          build/libxtrans-prefix/src/libxtrans-stamp/libxtrans-generate-*.log
-          build/xorgproto-prefix/src/xorgproto-stamp/xorgproto-generate-*.log
+          ./cassiaext/build/libxtrans-prefix/src/libxtrans-stamp/libxtrans-generate-*.log
+          ./cassiaext/build/xorgproto-prefix/src/xorgproto-stamp/xorgproto-generate-*.log
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
