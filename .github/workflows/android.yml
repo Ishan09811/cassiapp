@@ -47,6 +47,8 @@ jobs:
 
         # Ensure submodules are updated
         git submodule update --init --recursive
+        # Apply patches
+        python3 deps/apply-patches.py
 
         # CMake build command with debugging
         export CI=true
