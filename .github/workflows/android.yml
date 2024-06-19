@@ -29,7 +29,8 @@ jobs:
            meson \
            build-essential \
            cmake \
-           jq
+           jq \
+           xutils-dev
 
     - name: Download Android NDK
       uses: android-actions/setup-android@v2
