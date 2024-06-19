@@ -48,8 +48,8 @@ jobs:
         # Ensure submodules are updated
         git submodule update --init --recursive
         # Apply patches
-        git config --global user.name "${{ secrets.GIT_USER_NAME }}"
-        git config --global user.email "${{ secrets.GIT_USER_EMAIL }}"
+        git config user.name "${{ secrets.GIT_USER_NAME }}"
+        git config user.email "${{ secrets.GIT_USER_EMAIL }}"
         python3 deps/apply-patches.py
 
         # CMake build command with debugging
