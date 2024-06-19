@@ -22,7 +22,8 @@ jobs:
 
     - name: Setup CassiaExt
       run: |
-        git clone https://github.com/cassia-org/cassiaext
+        git clone https://github.com/Ishan09811/cassiaext/
+        export CI=true
         python3 cassiaext/deps/apply-patches.py 
         printf "$(pwd)/cassiaext\n\
         cmake -GNinja -Bbuild -H. \
