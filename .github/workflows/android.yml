@@ -24,7 +24,7 @@ jobs:
       run: |
         git clone https://github.com/Ishan09811/cassiaext/
         export CI=true
-        python3 cassiaext/deps/reset-deps.py
+        python3 cassiaext/deps/add-dep.py
         python3 cassiaext/deps/apply-patches.py
         printf "$(pwd)/cassiaext\n\
         cmake -GNinja -Bbuild -H. \
