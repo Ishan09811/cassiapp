@@ -50,6 +50,7 @@ jobs:
         # Apply patches
         git config user.name "${{ secrets.GIT_USER_NAME }}"
         git config user.email "${{ secrets.GIT_USER_EMAIL }}"
+        python3 deps/reset-deps.py
         python3 deps/apply-patches.py
 
         # CMake build command with debugging
