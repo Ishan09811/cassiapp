@@ -31,7 +31,18 @@ jobs:
            cmake \
            jq \
            xutils-dev \
-           font-util
+           autoconf \
+           automake \
+           libtool \
+           pkg-config
+
+    - name: Install font-util from source
+      run: |
+        git clone https://gitlab.freedesktop.org/xorg/font/util.git
+        cd util
+        ./autogen.sh
+        make
+        sudo make install
 
     - name: Download Android NDK
       uses: android-actions/setup-android@v2
