@@ -22,8 +22,15 @@ jobs:
         distribution: 'temurin'
         cache: gradle
 
-    - name: Install Dependencies
+    - name: Download Android NDK
+      uses: android-actions/setup-android@v2
+      with:
+        ndk-version: '25.2.9519653'
+
+    - name: Setup CassiaExt
       run: |
+        git clone https://github.com/Ishan09811/cassiaext/
+        cd cassiaext
         sudo apt-get update && sudo apt-get install -y \
            ninja-build \
            meson \
@@ -37,33 +44,7 @@ jobs:
            pkg-config \
            wget \
            tar
-
-    - name: Install font-util from source
-      run: |
-        wget https://www.x.org/releases/individual/font/font-util-1.1.0.tar.gz
-        tar -xzf font-util-1.1.0.tar.gz
-        cd font-util-1.1.0
-        ./configure
-        make
-        sudo make install
-        cd ..
-        # Verify installation
-        if pkg-config --exists fontutil; then
-          echo "font-util installed successfully."
-        else
-          echo "font-util installation failed."
-          exit 1
-        fi
-
-    - name: Download Android NDK
-      uses: android-actions/setup-android@v2
-      with:
-        ndk-version: '25.2.9519653'
-
-    - name: Setup CassiaExt
-      run: |
-        git clone https://github.com/Ishan09811/cassiaext/
-        cd cassiaext
+           
         export ANDROID_NDK_HOME=${ANDROID_NDK_HOME}
         export ANDROID_SDK_HOME=${ANDROID_SDK_HOME}
         export PATH=${ANDROID_NDK_HOME}/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
