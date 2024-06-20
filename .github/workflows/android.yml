@@ -34,13 +34,16 @@ jobs:
            autoconf \
            automake \
            libtool \
-           pkg-config
+           pkg-config \
+           wget \
+           tar
 
     - name: Install font-util from source
       run: |
-        git clone https://gitlab.freedesktop.org/xorg/font/util.git
-        cd util
-        ./autogen.sh
+        wget https://www.x.org/releases/individual/font/font-util-1.1.0.tar.gz
+        tar -xzf font-util-1.1.0.tar.gz
+        cd font-util-1.1.0
+        ./configure
         make
         sudo make install
 
