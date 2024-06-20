@@ -46,6 +46,14 @@ jobs:
         ./configure
         make
         sudo make install
+        cd ..
+        # Verify installation
+        if pkg-config --exists fontutil; then
+          echo "font-util installed successfully."
+        else
+          echo "font-util installation failed."
+          exit 1
+        fi
 
     - name: Download Android NDK
       uses: android-actions/setup-android@v2
