@@ -106,11 +106,9 @@ jobs:
     - name: Upload build logs
       uses: actions/upload-artifact@v4
       with:
-        name: build-logs
+        name: build
         path: |
-          ./cassiaext/build/libfontenc-prefix/src/libfontenc-stamp/libfontenc-generate-*.log
-          ./cassiaext/build/libxtrans-prefix/src/libxtrans-stamp/libxtrans-generate-*.log
-          ./cassiaext/build/xorgproto-prefix/src/xorgproto-stamp/xorgproto-generate-*.log
+          ./cassiaext/build/
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
