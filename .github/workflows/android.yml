@@ -30,7 +30,8 @@ jobs:
            build-essential \
            cmake \
            jq \
-           xutils-dev
+           xutils-dev \
+           font-util
 
     - name: Download Android NDK
       uses: android-actions/setup-android@v2
