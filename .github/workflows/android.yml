@@ -38,6 +38,7 @@ jobs:
            cmake \
            jq \
            xutils-dev \
+           xorg-util-macros \
            autoconf \
            automake \
            libtool \
