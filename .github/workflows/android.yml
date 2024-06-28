@@ -49,6 +49,8 @@ jobs:
         export ANDROID_SDK_HOME=${ANDROID_SDK_HOME}
         export PATH=${ANDROID_NDK_HOME}/toolchains/llvm/prebuilt/linux-x86_64/bin:$PATH
 
+        find /usr -name xorg-macros.pc 2>/dev/null
+
         # Logging environment variables for debugging
         echo "ANDROID_NDK_HOME=${ANDROID_NDK_HOME}"
         echo "ANDROID_SDK_HOME=${ANDROID_SDK_HOME}"
